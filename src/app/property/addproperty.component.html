@@ -1,0 +1,54 @@
+Add Property Here
+<form >
+    <label for="RentalType">Rental Type</label>
+    <select id="RentalType" name="RentalType" [(ngModel)]="advertUnit.RentalType">
+        <option *ngFor="let rentalType of rentalTypes" >{{rentalType.title}}</option>
+    </select>
+    <label for="RentPerMonth">Rent Per Month (SGD)</label>
+    <input type="text" placeholder="Rent Per Month(SGD)" id="RentPerMonth" name="RentPerMonth" [(ngModel)]="advertUnit.RentPerMonth" />
+    
+    <label for="AdvertiserType">Advertised By</label>
+    <select id="AdvertiserType" name="AdvertiserType" [(ngModel)]="advertUnit.AdvertisedBy" >
+        <option *ngFor="let advertiserType of advertiserTypes">{{advertiserType}}</option>
+    </select>
+    
+    <label for="StayDuration">Stay Duration</label>
+    <select id="StayDuration" name="StayDuration" [(ngModel)]="advertUnit.StayDuration" >
+        <option *ngFor="let stayDurationType of stayDurationTypes">{{stayDurationType}}</option>
+    </select>
+
+    <label for="AddressRegion">Region</label>
+    <select id="AddressRegion" name="AddressRegion" [(ngModel)]="advertUnit.Region">
+        <option *ngFor="let region of regions">{{region}}</option>
+    </select>
+
+    <label for="District">District</label>
+    <select id="District" name="District" [(ngModel)]="advertUnit.District" >
+        <option *ngFor="let district of districts">{{district}}</option>
+    </select>
+    
+    <label for="Address1">Address 1</label>
+    <input type="text" placeholder="ex. 209 Marine Parade" id="Address1" name="Address1" [(ngModel)]="advertUnit.Address1" />
+
+    <label for="PropertyType">Property Type</label>
+    <select id="PropertyType" name="PropertyType" [(ngModel)]="advertUnit.PropertyType">
+        <option *ngFor="let propertyType of propertyTypes">{{propertyType}}</option>
+    </select>
+
+    <label for="OccupationPreference">Occupation Preference</label>
+    <select id="OccupationPreference" name="OccupationPreference" [(ngModel)]="advertUnit.OccupationPreference">
+        <option *ngFor="let occupationPreference of occupationPreferences">{{occupationPreference}}</option>
+    </select>
+
+
+    <label for="GenderPreference">Gender Preference</label>
+    <select id="GenderPreference" name="GenderPreference" [(ngModel)]="advertUnit.GenderPreference">
+        <option *ngFor="let genderPreference of genderPreferences">{{genderPreference}}</option>
+    </select>
+
+    <li *ngFor="let feature of features">
+        <input type="checkbox" [(ngModel)]="feature.selected" name="feature.title" >{{feature.title}}
+    </li>
+
+    <input type="button" title="Submit" (click)="addProperty()">
+</form>

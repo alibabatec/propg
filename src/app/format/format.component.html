@@ -1,0 +1,23 @@
+<p>format works!</p>
+<form (ngSubmit)="save()">
+<input type="text" [(ngModel)]="desc" id="name" name="name" required minlength="3"  #name="ngModel" appForbiddenName="bottom"/>{{desc}}
+<div *ngIf="name.invalid && (name.dirty || name.touched)"> Name invalid</div>
+
+<div *ngIf="name.errors">
+    <div *ngIf="name.errors.required">Enter your name</div>
+    <div *ngIf="name.errors.minlength">
+        Name must be at least 4 characters long.
+    </div>
+    <div *ngIf="name.errors.appForbiddenName">
+        Forbidden Names not allowed
+    </div>
+
+</div>
+
+{{name.dirty + ":"+ name.pristine}}
+
+
+<div>dte</div>
+<input type="button" (click)="showFormats()" value="Show Formats">
+<input type="submit" value="Save Formdata">
+</form>
