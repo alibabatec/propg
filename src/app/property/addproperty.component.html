@@ -1,19 +1,22 @@
+<home-bar></home-bar>
+
 Add Property Here
-<form >
+<form>
     <label for="RentalType">Rental Type</label>
     <select id="RentalType" name="RentalType" [(ngModel)]="advertUnit.RentalType">
-        <option *ngFor="let rentalType of rentalTypes" >{{rentalType.title}}</option>
+        <option *ngFor="let rentalType of rentalTypes">{{rentalType.title}}</option>
     </select>
     <label for="RentPerMonth">Rent Per Month (SGD)</label>
-    <input type="text" placeholder="Rent Per Month(SGD)" id="RentPerMonth" name="RentPerMonth" [(ngModel)]="advertUnit.RentPerMonth" />
-    
+    <input type="text" placeholder="Rent Per Month(SGD)" id="RentPerMonth" name="RentPerMonth"
+        [(ngModel)]="advertUnit.RentPerMonth" />
+
     <label for="AdvertiserType">Advertised By</label>
-    <select id="AdvertiserType" name="AdvertiserType" [(ngModel)]="advertUnit.AdvertisedBy" >
+    <select id="AdvertiserType" name="AdvertiserType" [(ngModel)]="advertUnit.AdvertisedBy">
         <option *ngFor="let advertiserType of advertiserTypes">{{advertiserType}}</option>
     </select>
-    
+
     <label for="StayDuration">Stay Duration</label>
-    <select id="StayDuration" name="StayDuration" [(ngModel)]="advertUnit.StayDuration" >
+    <select id="StayDuration" name="StayDuration" [(ngModel)]="advertUnit.StayDuration">
         <option *ngFor="let stayDurationType of stayDurationTypes">{{stayDurationType}}</option>
     </select>
 
@@ -23,12 +26,13 @@ Add Property Here
     </select>
 
     <label for="District">District</label>
-    <select id="District" name="District" [(ngModel)]="advertUnit.District" >
+    <select id="District" name="District" [(ngModel)]="advertUnit.District">
         <option *ngFor="let district of districts">{{district}}</option>
     </select>
-    
+
     <label for="Address1">Address 1</label>
-    <input type="text" placeholder="ex. 209 Marine Parade" id="Address1" name="Address1" [(ngModel)]="advertUnit.Address1" />
+    <input type="text" placeholder="ex. 209 Marine Parade" id="Address1" name="Address1"
+        [(ngModel)]="advertUnit.Address1" />
 
     <label for="PropertyType">Property Type</label>
     <select id="PropertyType" name="PropertyType" [(ngModel)]="advertUnit.PropertyType">
@@ -39,16 +43,18 @@ Add Property Here
     <select id="OccupationPreference" name="OccupationPreference" [(ngModel)]="advertUnit.OccupationPreference">
         <option *ngFor="let occupationPreference of occupationPreferences">{{occupationPreference}}</option>
     </select>
-
-
     <label for="GenderPreference">Gender Preference</label>
     <select id="GenderPreference" name="GenderPreference" [(ngModel)]="advertUnit.GenderPreference">
         <option *ngFor="let genderPreference of genderPreferences">{{genderPreference}}</option>
     </select>
 
     <li *ngFor="let feature of features">
-        <input type="checkbox" [(ngModel)]="feature.selected" name="feature.title" >{{feature.title}}
+        <input type="checkbox" [(ngModel)]="feature.selected" name="feature.title">{{feature.title}}
     </li>
-
+    <label for="PropertyTitle">Title</label>
+    <input type="text" [(ngModel)]="advertUnit.PropertyTitle" name="PropertyTitle" id="PropertyTitle">
+    <label for="PropertyDescription">Description</label>
+    <input type="text" [(ngMode)l]="advertUnit.PropertyDescription" name="PropertyDescription"
+        id="PropertyDescription" />
     <input type="button" title="Submit" (click)="addProperty()">
 </form>

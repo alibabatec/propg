@@ -1,34 +1,32 @@
 <home-bar></home-bar>
 
 <div *ngFor="let adUnit of advertUnits" class="row"
-style="background-color: rosybrown; margin:5px; border:sandybrown px solid;padding:2px;"
+    style="background-color: rosybrown; margin:5px; border:sandybrown px solid;padding:2px;">
 
->
+    <div class="col-md-4">
+        <img src="./../../assets/images/house1.jpg">
+    </div>
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-6"> RentPerMonth : {{adUnit.RentPerMonth | currency:'SGD '}}</div>
+            <div class="col-md-6">{{adUnit.PropertyTitle}}</div>
+        </div>
+        <div class="row">
+            {{adUnit.PropertyDescription}}
+        </div>
 
-<div class="col-md-4">
-<img src="./../../assets/images/house1.jpg" ></div>
-<div class="col-md-8">
-    <div class="row">
-    <div class="col-md-6"> RentPerMonth : {{adUnit.RentPerMonth | currency:'SGD '}}</div>
-    <div  class="col-md-6">{{adUnit.PropertyTitle}}</div>
-</div>
-<div class="row">
-    {{adUnit.PropertyDescription}}
-</div>
-
-<div class="row">
-    RentalType : {{adUnit.RentalType}}
-    AdvertisedBy : {{adUnit.AdvertisedBy}}
-    StayDuration : {{adUnit.StayDuration}}
-    Region : {{adUnit.Region}}
-    District:{{adUnit.District}}
-    Address1 :{{adUnit.Address1}}
-    PropertyType : {{adUnit.PropertyType}}
-    OccupationPreference : {{adUnit.OccupationPreference}}
-    GenderPreference : {{adUnit.GenderPreference}}
-    Features : {{adUnit.Features}}
-    
-    PropertyDescription : {{adUnit.PropertyDescription}}
-</div>
-</div>
+        <div class="row">
+            RentalType : {{adUnit.RentalType}}
+            AdvertisedBy : {{adUnit.AdvertisedBy}}
+            StayDuration : {{adUnit.StayDuration}}
+            Region : {{adUnit.Region}}
+            District:{{adUnit.District}}
+            Address1 :{{adUnit.Address1}}
+            PropertyType : {{adUnit.PropertyType}}
+            OccupationPreference : {{adUnit.OccupationPreference}}
+            GenderPreference : {{adUnit.GenderPreference}}
+            Features : {{adUnit.Features}}
+            PropertyDescription : {{adUnit.PropertyDescription}}
+        </div>
+    </div>
 </div>
